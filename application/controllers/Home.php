@@ -1,6 +1,6 @@
 <?php
 
-$server_key = "SB-Mid-server-U4Rl-v_VLt-SlGQ1tL9vl4E_";
+$server_key = "SB-Mid-server-Xqj-usMB8tp3aIUk1l0guBI3";
 $is_production = false;
 $api_url = $is_production ? 
   'https://app.midtrans.com/snap/v1/transactions' : 
@@ -18,7 +18,7 @@ class Home extends CI_Controller {
 		$this->load->view('pay');
 	}
 	public function notif()
-	{	$urldb = "https://kasver-92d84-default-rtdb.asia-southeast1.firebasedatabase.app";
+	{	$urldb = "https://lesgo-bc916-default-rtdb.asia-southeast1.firebasedatabase.app";
 		$params = array('server_key' => 'SB-Mid-server-U4Rl-v_VLt-SlGQ1tL9vl4E_', 'production' => false);
 		$this->load->library('veritrans');
 		$this->veritrans->config($params);
