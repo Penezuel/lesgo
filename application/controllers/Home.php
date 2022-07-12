@@ -19,7 +19,7 @@ class Home extends CI_Controller {
 	}
 	public function notif()
 	{	$urldb = "https://lesgo-bc916-default-rtdb.asia-southeast1.firebasedatabase.app";
-		$params = array('server_key' => 'SB-Mid-server-U4Rl-v_VLt-SlGQ1tL9vl4E_', 'production' => false);
+		$params = array('server_key' => 'SB-Mid-server-Xqj-usMB8tp3aIUk1l0guBI3', 'production' => false);
 		$this->load->library('veritrans');
 		$this->veritrans->config($params);
 		$this->load->helper('url');
@@ -60,7 +60,7 @@ class Home extends CI_Controller {
 		else if ($transaction == 'settlement'){
 		  // TODO set payment status in merchant's database to 'Settlement'
 		  $db = new firebaseRDB($urldb);
-		  $update = $db->update("Payment", $order_id, [
+		  $update = $db->update("Pembelian/kwitansi/", $order_id, [
 			"status"     => $transaction,
 			"claim" => "1"
 		 ]);
