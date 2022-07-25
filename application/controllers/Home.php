@@ -60,9 +60,15 @@ class Home extends CI_Controller {
 		else if ($transaction == 'settlement'){
 		  // TODO set payment status in merchant's database to 'Settlement'
 		  $db = new firebaseRDB($urldb);
-		  $update = $db->update("Pembelian/kwitansi/", $order_id, [
-			"status"     => "success"
-		 ]);
+		   if($type == "gopay" || $type == "shopeepay"){
+			
+		  }else{
+			$update = $db->update("Payment", $order_id, [
+				"status"     => $transaction,
+				"claim" => "1",
+				"date" => $milliseconds
+			 ]);
+		  }
 		  } 
 		  else if($transaction == 'pending'){
 		  // TODO set payment status in merchant's database to 'Pending'
@@ -75,9 +81,15 @@ class Home extends CI_Controller {
 		else if ($transaction == 'expire') {
 			// TODO set payment status in merchant's database to 'Denied'
 			$db = new firebaseRDB($urldb);
-		  $update = $db->update("Payment", $order_id, [
-			"status"     => "expire",
-		 ]);
+		  if($type == "gopay" || $type == "shopeepay"){
+			
+		  }else{
+			$update = $db->update("Payment", $order_id, [
+				"status"     => $transaction,
+				"claim" => "1",
+				"date" => $milliseconds
+			 ]);
+		  }
 		  }
 
 	}
