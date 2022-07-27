@@ -64,9 +64,7 @@ class Home extends CI_Controller {
 			
 		  }else{
 			$update = $db->update("Payment", $order_id, [
-				"status"     => $transaction,
-				"claim" => "1",
-				"date" => $milliseconds
+				"status_bayar"     => "success"
 			 ]);
 		  }
 		  } 
@@ -85,9 +83,7 @@ class Home extends CI_Controller {
 			
 		  }else{
 			$update = $db->update("Payment", $order_id, [
-				"status"     => $transaction,
-				"claim" => "1",
-				"date" => $milliseconds
+				"status_bayar"     => $transaction
 			 ]);
 		  }
 		  }
