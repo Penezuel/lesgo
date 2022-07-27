@@ -63,7 +63,7 @@ class Home extends CI_Controller {
 		   if($type == "gopay" || $type == "shopeepay"){
 			
 		  }else{
-			$update = $db->update("Payment", $order_id, [
+			$update = $db->update("Pembelian/kwitansi", $order_id, [
 				"status_bayar"     => "success"
 			 ]);
 		  }
@@ -82,7 +82,7 @@ class Home extends CI_Controller {
 		  if($type == "gopay" || $type == "shopeepay"){
 			
 		  }else{
-			$update = $db->update("Payment", $order_id, [
+			$update = $db->update("Pembelian/kwitansi", $order_id, [
 				"status_bayar"     => $transaction
 			 ]);
 		  }
